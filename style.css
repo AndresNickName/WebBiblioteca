@@ -1,0 +1,238 @@
+  /* Estilos generales */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #CE364C;
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 2rem;
+    height: 2rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Estilos para el menú móvil */
+.menu-toggle {
+    display: none;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #2d3748;
+    padding: 1rem;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0;
+}
+
+.desktop-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.desktop-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.desktop-menu a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos del contenido principal */
+main {
+    flex: 1;
+}
+
+section {
+    padding: 3rem 1.5rem;
+}
+
+.sec-one {
+    background-color: #f7fafc;
+}
+
+.inicio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem;
+    padding: 4rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.inicio-text{
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+.card {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+.card:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.card:hover img {
+    transform: scale(1.05);
+}
+.card-content {
+    padding: 1.5rem;
+    text-align: center;
+}
+.card-content svg {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.5rem;
+}
+.card-content h3 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #CE364C;
+    color: white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    opacity: 0.8;
+}
+
+/* Media queries para diseño responsivo */
+@media (max-width: 767px) {
+    .menu-button {
+        display: block;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .menu-toggle:checked ~ .mobile-menu {
+        display: flex;
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none !important;
+    }
+
+    .desktop-menu {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .desktop-menu a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .desktop-menu a:hover {
+        text-decoration: underline;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .inicio-imagen {
+        grid-column: span 2;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+    }
+
+    .inicio-imagen {
+        grid-column: span 1;
+    }
+}
